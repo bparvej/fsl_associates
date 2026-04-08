@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fair & Square Legal Associates</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .contact-info-card {
+            background: #222;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .contact-info-card h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .contact-detail i {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            flex: 1;
+        }
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+        }
+        .btn-email {
+            background: var(--accent);
+            color: #fff;
+        }
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .form-group textarea {
+            height: 150px;
+        }
+        .submit-btn {
+            background: #111;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+        <h1 class="hero-title">Contact Us</h1>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="animate-on-scroll">
+                    <p style="font-size: 18px; margin-bottom: 40px;">To learn more about how Fair & Square Legal Associates can assist you with your legal needs, please don't hesitate to get in touch. Our knowledgeable team is standing by to provide you with the guidance and support you need.</p>
+                    
+                    <div class="contact-info-card">
+                        <h3 class="serif">Main Office</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-location-dot"></i>
+                            <p>District & Session Judge Court, Dhaka. Court house Street Dhaka., Dhaka, Bangladesh, 1100</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <p>01912-345528</p>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <p>advocatemalamgir@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="https://www.facebook.com/profile.php?id=61578124595569" target="_blank" class="btn btn-whatsapp"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="mailto:advocatemalamgir@gmail.com" class="btn btn-email"><i class="fas fa-envelope"></i> Email Us</a>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll">
+                    <div class="contact-form">
+                        <h2 class="serif" style="margin-bottom: 30px; text-align: center;">Send a Message</h2>
+                        <form action="#">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="How can we help?">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" placeholder="Describe your legal matter..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Consultation Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

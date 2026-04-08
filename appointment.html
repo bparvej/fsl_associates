@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment - Fair & Square Legal Associates</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .appointment-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .appointment-form {
+            background: #222;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .appointment-form h1 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .appointment-form .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select option {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .btn-submit,
+        .btn-cancel {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit {
+            background: var(--accent);
+            color: #111;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-cancel {
+            background: #333;
+            color: #fff;
+        }
+
+        .btn-cancel:hover {
+            background: #444;
+        }
+
+        .form-note {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .success-message {
+            display: none;
+            background: #1d5016;
+            border: 1px solid #2d8b1f;
+            color: #a8fea4;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .appointment-container {
+                padding: 40px 15px;
+            }
+
+            .appointment-form {
+                padding: 30px;
+            }
+
+            .appointment-form h1 {
+                font-size: 24px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .btn-submit,
+            .btn-cancel {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+        <h1 class="hero-title">Book an Appointment</h1>
+    </section>
+
+    <section class="dark-section">
+        <div class="appointment-container">
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i> Your appointment request has been submitted successfully. Our team will contact you shortly.
+            </div>
+
+            <form class="appointment-form" id="appointmentForm">
+                <h1 class="serif">Schedule Your Consultation</h1>
+                <p class="subtitle">Fill in your details and we'll get back to you within 24 hours</p>
+
+                <div class="form-group">
+                    <label for="name">Full Name <span style="color: var(--accent);">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    <span class="form-note">As it appears in official documents</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number <span style="color: var(--accent);">*</span></label>
+                    <input type="tel" id="mobile" name="mobile" required placeholder="+880 1XXX-XXXXXX">
+                    <span class="form-note">We'll use this to contact you</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="tentativeDate">Tentative Date Preference <span style="color: var(--accent);">*</span></label>
+                    <select id="tentativeDate" name="tentativeDate" required>
+                        <option value="">-- Select preferred timing --</option>
+                        <option value="within-24">Within 24 hours</option>
+                        <option value="1-2-days">1-2 days</option>
+                        <option value="1-week">1 week</option>
+                    </select>
+                    <span class="form-note">When would you prefer to meet?</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="matter">Legal Matter <span style="color: var(--accent);">*</span></label>
+                    <select id="matter" name="matter" required>
+                        <option value="">-- Select legal matter --</option>
+                        <option value="Family Law">Family Law (Divorce, Custody, Maintenance)</option>
+                        <option value="Criminal Law">Criminal Law (Defense, Prosecution)</option>
+                        <option value="Civil Law">Civil Law (Property, Contracts, Disputes)</option>
+                        <option value="Business Law">Business Law (Corporate Advisory, Disputes)</option>
+                        <option value="Property Management">Property Management</option>
+                        <option value="NRB Service">NRB Service</option>
+                        <option value="Cross-border Arbitration">Cross-border Arbitration</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes for Receptionist/Attendant</label>
+                    <textarea id="notes" name="notes" placeholder="Please provide any additional details about your case that would help us prepare for your consultation..."></textarea>
+                    <span class="form-note">This helps us better serve you</span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Appointment Request</button>
+                    <button type="reset" class="btn-cancel">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                mobile: document.getElementById('mobile').value,
+                email: document.getElementById('email').value,
+                tentativeDate: document.getElementById('tentativeDate').value,
+                matter: document.getElementById('matter').value,
+                notes: document.getElementById('notes').value,
+                submittedAt: new Date().toLocaleString()
+            };
+
+            // Store in localStorage (for demonstration)
+            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            appointments.push(formData);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+
+            // Reset form
+            document.getElementById('appointmentForm').reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+
+            // Log to console (you would send this to your backend in production)
+            console.log('Appointment Request:', formData);
+        });
+    </script>
+</body>
+</html>
