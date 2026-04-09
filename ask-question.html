@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Now - Fair & Square Legal Associates</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .ask-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .ask-form-box {
+            background: var(--secondary-bg);
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .ask-form-box h1 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-align: center;
+        }
+        .ask-form-box p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            background: var(--accent);
+            color: #111;
+            padding: 16px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+        <h1 class="hero-title">Ask for Legal Aid</h1>
+    </section>
+
+    <section class="dark-section">
+        <div class="ask-container">
+            <div class="ask-form-box animate-on-scroll">
+                <h1 class="serif">Free Consultancy</h1>
+                <p>Please provide your details and the nature of your query.</p>
+                <form id="legalAidForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" id="mobile" name="mobile" required placeholder="Your contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="aid-type">What sort type Legal Aid you are looking for</label>
+                        <textarea id="aid-type" name="aid-type" required placeholder="Describe your legal requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Query</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('legalAidForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your query. Our legal experts will review your request and get back to you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

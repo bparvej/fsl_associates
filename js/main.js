@@ -21,11 +21,9 @@ const fallbackHeaderHTML = `
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="associates.html">Our Team</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="associates.html">Associates</a></li>
                 <li>
-                    <a href="#">Practise <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <a href="#">Practice <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-menu">
                         <a href="family-law.html">Family Law</a>
                         <a href="criminal-law.html">Criminal Law</a>
@@ -34,13 +32,8 @@ const fallbackHeaderHTML = `
                         <a href="miscellaneous.html">Misc.</a>
                     </div>
                 </li>
-                <li>
-                    <a href="#">More <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="case-client-successes.html">Case & Client Successes</a>
-                        <a href="contact-us.html">Contact Us</a>
-                    </div>
-                </li>
+                <li><a href="csr.html">CSR</a></li>
+                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
     </div>
@@ -142,6 +135,58 @@ function setupAdvocateSlider() {
     if (next) next.addEventListener('click', () => move(1));
 }
 
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('.stat-number');
+    const observerOptions = { threshold: 0.5 };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 2 seconds
+                const startTime = performance.now();
+                
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const currentCount = Math.floor(progress * target);
+                    counter.innerText = currentCount;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+                requestAnimationFrame(update);
+                observer.unobserve(counter);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function initAppointmentTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabBtns.length === 0) return;
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.tab;
+            
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.style.display = 'none');
+            
+            btn.classList.add('active');
+            document.getElementById(target).style.display = 'block';
+        });
+    });
+}
+
 function setupActiveMenu() {
     const current = window.location.pathname.split('/').pop();
     document.querySelectorAll('nav ul li a').forEach(a => {
@@ -173,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAdvocateSlider();
     setupActiveMenu();
     setupFloatingButton();
+    initCounterAnimation();
+    initAppointmentTabs();
 
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
