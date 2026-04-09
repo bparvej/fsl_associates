@@ -10,7 +10,7 @@ This document contains the prompts and the technical logic used to create this c
 
 ### 2. Barrister Portrait
 **Used for:** `assets/barrister.png`
-> **Prompt:** Professional headshot portrait of a South Asian male barrister in his mid-30s, wearing a white formal shirt, looking confident and professional. Dark background with blurred law books on shelves. Warm studio lighting, high-end corporate photography style. Professional and authoritative expression. High resolution.
+> **Prompt:** Professional headshot portrait of a South Asian male barrister in his mid-30s, wearing a white formal shirt, looking confident and professional. Dark background with blurred law books on shelves. Warm studio lighting, high-end corporate photography style. Professional and authoritative expression. High resolution. 
 
 ---
 
