@@ -83,11 +83,16 @@ function loadFragment(selector, url, fallbackHTML) {
         .then(response => response.ok ? response.text() : Promise.reject('Failed to load ' + url))
         .then(html => {
             container.innerHTML = html;
-            initHeaderEvents();
+            // Only initialize header-specific events if we just loaded the header
+            if (selector === '#header-placeholder') {
+                initHeaderEvents();
+            }
         })
         .catch(() => {
             container.innerHTML = fallbackHTML;
-            initHeaderEvents();
+            if (selector === '#header-placeholder') {
+                initHeaderEvents();
+            }
         });
 }
 
@@ -110,6 +115,12 @@ function initHeaderEvents() {
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
         });
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {

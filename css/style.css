@@ -413,6 +413,11 @@ footer {
 
     .menu-toggle {
         display: block;
+        z-index: 1002; /* Ensure toggle stays above the expanded nav */
+        position: relative;
+        display: flex; /* Use flexbox to center the icon */
+        align-items: center;
+        justify-content: center;
     }
 
     nav {
