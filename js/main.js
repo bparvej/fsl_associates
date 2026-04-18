@@ -23,6 +23,16 @@ const fallbackHeaderHTML = `
                 <li><a href="index.html">Home</a></li>
                 <li><a href="associates.html">Associates</a></li>
                 <li>
+                    <a href="#">Consultancy <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="dropdown-menu" style="min-width: 240px;">
+                        <span class="dropdown-header">Paid Consultation</span>
+                        <a href="appointment.html">Online Consultation</a>
+                        <a href="visit-consultation.html">Visit Consultation</a>
+                        <div style="border-top: 1px solid #eee; margin: 5px 0;"></div>
+                        <a href="ask-question.html">Free Consultation</a>
+                    </div>
+                </li>
+                <li>
                     <a href="#">Practice <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-menu">
                         <a href="family-law.html">Family Law</a>
@@ -51,7 +61,7 @@ const fallbackFooterHTML = `
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
-                    <li><i class="fas fa-location-dot"></i> District & Session Judge Court, Dhaka. Court house Street Dhaka., Dhaka, Bangladesh, 1100</li>
+                    <li><i class="fas fa-location-dot"></i> Nazma Law House, 50/1 Johnson Road, Dhaka-1100 (Level-2). Room no: 25 (Beside Star kabab & Restaurant and Opposite of DC Office)</li>
                     <li><i class="fas fa-envelope"></i> advocatemalamgir@gmail.com</li>
                     <li><i class="fas fa-phone"></i> 01912-345528</li>
                 </ul>
@@ -124,8 +134,15 @@ function initHeaderEvents() {
         });
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('active-mobile');
+                } else {
+                    nav.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
             });
         });
     }

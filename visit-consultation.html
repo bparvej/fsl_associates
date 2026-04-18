@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Consultation - Fair & Square Legal Associates</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .visit-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .visit-info {
+            background: #222;
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        .visit-form-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            color: #333;
+        }
+        .info-item {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+        }
+        .info-item i {
+            color: var(--accent);
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .submit-btn {
+            background: #111;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        @media (max-width: 768px) {
+            .visit-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+        <h1 class="hero-title">Visit Our Chamber</h1>
+        <p class="hero-tagline">Physical Consultation with Our Experts</p>
+    </section>
+
+    <section class="dark-section">
+        <div class="visit-container">
+            <div class="visit-info animate-on-scroll">
+                <h2 class="serif" style="color: var(--accent); margin-bottom: 20px;">Chamber Details</h2>
+                <p style="margin-bottom: 30px;">For a more detailed discussion regarding complex legal matters, we recommend scheduling a visit to our main chamber.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h4 style="color: #fff;">Address</h4>
+                        <p>Nazma Law House, 50/1 Johnson Road, Dhaka-1100 (Level-2). Room no: 25</p>
+                        <p style="font-size: 14px; color: var(--text-muted);">(Beside Star kabab & Restaurant and Opposite of Chef Judicial magistrate Court)</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4 style="color: #fff;">Visiting Hours</h4>
+                        <p>Saturday - Thursday: 10:00 AM - 08:00 PM</p>
+                        <p style="font-size: 14px; color: var(--text-muted);">*Prior appointment is required</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-credit-card"></i>
+                    <div>
+                        <h4 style="color: #fff;">Consultation Fee</h4>
+                        <p>Standard physical visit fees apply. Please confirm during appointment booking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visit-form-box animate-on-scroll">
+                <h2 class="serif" style="margin-bottom: 30px; text-align: center;">Book a Visit</h2>
+                <form id="visitForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" required placeholder="01XXX-XXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Briefly Describe Your Matter</label>
+                        <textarea placeholder="e.g., Property dispute, Family law..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Chamber Visit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('visitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your request for a chamber visit has been sent. We will call you to confirm the time slot.');
+        });
+    </script>
+</body>
+</html>
