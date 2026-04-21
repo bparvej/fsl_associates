@@ -8,29 +8,39 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .practice-card {
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .practice-snapshot {
             background: #222;
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 4px solid var(--accent);
+            border-radius: 12px;
+            border: 1px solid #333;
             transition: var(--transition);
+            overflow: hidden;
+            position: relative;
         }
-        .practice-card:hover {
+        .practice-snapshot:hover {
             transform: translateY(-10px);
-            background: #2a2a2a;
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
         }
-        .practice-card i {
-            font-size: 32px;
+        .snapshot-content {
+            padding: 40px 30px;
+        }
+        .snapshot-content i {
+            font-size: 36px;
             color: var(--accent);
             margin-bottom: 20px;
         }
-        .practice-card h3 {
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-        .practice-card p {
-            color: var(--text-muted);
-            font-size: 15px;
+        .learn-more {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -43,10 +53,61 @@
 
     <section>
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto 60px; text-align: center;"> 
-                <h2 class="serif">Practice page retired</h2>
-                <p class="animate-on-scroll" style="font-size: 20px; color: var(--text-muted);">This page has been replaced by the current navigation structure. Please use the Practice menu in the header to select Family Law, Criminal Law, Civil Law, Business Law and Misc.</p>
-                <p>Or use <a href="faq.html" style="color: var(--accent);">FAQ</a> for updated guidance.</p>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 class="serif" style="font-size: 42px;">Our Expertise</h2>
+                <p style="color: var(--text-muted); max-width: 700px; margin: 20px auto;">Comprehensive legal solutions across diverse practice areas in Bangladesh and beyond.</p>
+            </div>
+
+            <div class="practice-grid">
+                <!-- Civil Law -->
+                <div class="practice-snapshot animate-on-scroll">
+                    <div class="snapshot-content">
+                        <i class="fas fa-scale-balanced"></i>
+                        <h3>Civil Law</h3>
+                        <p>Handling property disputes, contract breaches, and inheritance matters with precision and strategic litigation.</p>
+                        <a href="civil-law.html" class="learn-more">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Criminal Law -->
+                <div class="practice-snapshot animate-on-scroll">
+                    <div class="snapshot-content">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Criminal Law</h3>
+                        <p>Aggressive defense and robust representation for criminal offenses, bail applications, and special law matters.</p>
+                        <a href="criminal-law.html" class="learn-more">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Family Law -->
+                <div class="practice-snapshot animate-on-scroll">
+                    <div class="snapshot-content">
+                        <i class="fas fa-ring"></i>
+                        <h3>Family Law</h3>
+                        <p>Compassionate legal guidance for divorce, child custody, alimony, and sensitive domestic disputes.</p>
+                        <a href="family-law.html" class="learn-more">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Business Law -->
+                <div class="practice-snapshot animate-on-scroll">
+                    <div class="snapshot-content">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business Law</h3>
+                        <p>Corporate advisory, company formation, and commercial dispute resolution for local and global enterprises.</p>
+                        <a href="business-law.html" class="learn-more">View Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Misc -->
+                <div class="practice-snapshot animate-on-scroll">
+                    <div class="snapshot-content">
+                        <i class="fas fa-folder-open"></i>
+                        <h3>Miscellaneous</h3>
+                        <p>Specialized services including NRB support, property management, and cross-border arbitration.</p>
+                        <a href="miscellaneous.html" class="learn-more">View Details &rarr;</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

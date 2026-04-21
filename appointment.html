@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         .appointment-container {
             max-width: 700px;
@@ -14,20 +16,20 @@
             padding: 60px 20px;
         }
 
-        .appointment-form {
+        .form-box {
             background: #222;
-            padding: 50px;
+            padding: 40px;
             border-radius: 8px;
             border: 1px solid #333;
         }
 
-        .appointment-form h1 {
+        .form-box h1 {
             color: #fff;
             margin-bottom: 10px;
             font-size: 32px;
         }
 
-        .appointment-form .subtitle {
+        .form-box .subtitle {
             color: var(--text-muted);
             margin-bottom: 40px;
             font-size: 16px;
@@ -170,106 +172,176 @@
 
     <section class="dark-section">
         <div class="appointment-container">
-            <div class="success-message" id="successMessage">
-                <i class="fas fa-check-circle"></i> Your appointment request has been submitted successfully. Our team will contact you shortly.
+            <div class="tab-container">
+                <button class="tab-btn active" data-tab="appointment">Book Appointment</button>
+                <button class="tab-btn" data-tab="contact">Contact Us</button>
+                <button class="tab-btn" data-tab="free-consultancy">Free Consultancy</button>
             </div>
 
-            <form class="appointment-form" id="appointmentForm">
-                <h1 class="serif">Schedule Your Consultation</h1>
-                <p class="subtitle">Fill in your details and we'll get back to you within 24 hours</p>
+            <!-- Tab 1: Paid Appointment -->
+            <div id="appointment" class="tab-content" style="display: block;">
+                <form class="form-box" id="appointmentForm">
+                    <h1 class="serif" style="color: var(--accent);">Schedule Paid Consultation</h1>
+                    <p class="subtitle">Secure your legal future with world-class advocacy. You are taking a step towards absolute peace of mind; <span style="color: var(--accent); font-weight: 600;">our dedicated receptionist will contact you within 24 hours</span> to finalize your priority slot.</p>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number *</label>
+                        <input type="tel" required placeholder="+880 1XXX-XXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="tentativeDate">Tentative Date Preference <span style="color: var(--accent);">*</span></label>
+                        <select id="tentativeDate" name="tentativeDate" required>
+                            <option value="">-- Select preferred timing --</option>
+                            <option value="within-24">Within 24 hours</option>
+                            <option value="1-2-days">1-2 days</option>
+                            <option value="1-week">1 week</option>
+                        </select>
+                        <span class="form-note">When would you prefer to meet?</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="matter">Legal Matter *</label>
+                        <select id="matter" name="matter" required>
+                            <option value="">-- Select --</option>
+                            <option value="Family Law">Family Law (Divorce, Custody, Maintenance)</option>
+                            <option value="Criminal Law">Criminal Law (Defense, Prosecution)</option>
+                            <option value="Civil Law">Civil Law (Property, Contracts, Disputes)</option>
+                            <option value="Business Law">Business Law (Corporate Advisory, Disputes)</option>
+                            <option value="Property Management">Property Management</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Request Appointment</button>
+                    </div>
+                </form>
+            </div>
 
-                <div class="form-group">
-                    <label for="name">Full Name <span style="color: var(--accent);">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    <span class="form-note">As it appears in official documents</span>
-                </div>
+            <!-- Tab 2: Contact Us -->
+            <div id="contact" class="tab-content">
+                <form class="form-box" id="contactForm">
+                    <h1 class="serif" style="color: #3498db;">General Inquiry</h1>
+                    <p class="subtitle">Have a question about our firm or services? Send us a message.</p>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea style="min-height: 150px;"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" style="background: #3498db; color: #fff;">Send Message</button>
+                    </div>
+                </form>
+            </div>
 
-                <div class="form-group">
-                    <label for="mobile">Mobile Number <span style="color: var(--accent);">*</span></label>
-                    <input type="tel" id="mobile" name="mobile" required placeholder="+880 1XXX-XXXXXX">
-                    <span class="form-note">We'll use this to contact you</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="tentativeDate">Tentative Date Preference <span style="color: var(--accent);">*</span></label>
-                    <select id="tentativeDate" name="tentativeDate" required>
-                        <option value="">-- Select preferred timing --</option>
-                        <option value="within-24">Within 24 hours</option>
-                        <option value="1-2-days">1-2 days</option>
-                        <option value="1-week">1 week</option>
-                    </select>
-                    <span class="form-note">When would you prefer to meet?</span>
-                </div>
-
-                <div class="form-group">
-                    <label for="matter">Legal Matter <span style="color: var(--accent);">*</span></label>
-                    <select id="matter" name="matter" required>
-                        <option value="">-- Select legal matter --</option>
-                        <option value="Family Law">Family Law (Divorce, Custody, Maintenance)</option>
-                        <option value="Criminal Law">Criminal Law (Defense, Prosecution)</option>
-                        <option value="Civil Law">Civil Law (Property, Contracts, Disputes)</option>
-                        <option value="Business Law">Business Law (Corporate Advisory, Disputes)</option>
-                        <option value="Property Management">Property Management</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="notes">Notes for Receptionist/Attendant</label>
-                    <textarea id="notes" name="notes" placeholder="Please provide any additional details about your case that would help us prepare for your consultation..."></textarea>
-                    <span class="form-note">This helps us better serve you</span>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn-submit">Submit Appointment Request</button>
-                    <button type="reset" class="btn-cancel">Clear Form</button>
-                </div>
-            </form>
+            <!-- Tab 3: Free Consultancy -->
+            <div id="free-consultancy" class="tab-content">
+                <form class="form-box" id="freeForm">
+                    <h1 class="serif" style="color: #2ecc71;">Free Legal Aid</h1>
+                    <p class="subtitle">Looking for initial guidance? Describe your matter for a brief expert opinion.</p>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Describe Your Requirement</label>
+                        <textarea required placeholder="Briefly state your legal issue..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" style="background: #2ecc71; color: #fff;">Submit for Free Review</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="thankYouModal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h2 class="serif">Submission Successful</h2>
+            <p>Thank you for choosing Fair & Square Legal Associates. Your request has been received, and our dedicated team is already reviewing your details. We will reach out to you within 24 hours.</p>
+            <button class="btn btn-appointment" style="margin-top: 30px; width: 100%;" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <div id="footer-placeholder"></div>
 
     <script src="js/main.js"></script>
     <script>
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // --- Email Configuration ---
+        // Update these values later with your EmailJS credentials
+        const EMAIL_CONFIG = {
+            publicKey: "YOUR_PUBLIC_KEY",
+            serviceId: "YOUR_SERVICE_ID",
+            templateId: "YOUR_TEMPLATE_ID"
+        };
 
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                mobile: document.getElementById('mobile').value,
-                email: document.getElementById('email').value,
-                tentativeDate: document.getElementById('tentativeDate').value,
-                matter: document.getElementById('matter').value,
-                notes: document.getElementById('notes').value,
-                submittedAt: new Date().toLocaleString()
-            };
+        // Initialize EmailJS
+        (function() {
+            if(EMAIL_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+                emailjs.init(EMAIL_CONFIG.publicKey);
+            }
+        })();
 
-            // Store in localStorage (for demonstration)
-            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
-            appointments.push(formData);
-            localStorage.setItem('appointments', JSON.stringify(appointments));
+        function showThankYou() {
+            document.getElementById('thankYouModal').classList.add('active');
+        }
 
-            // Show success message
-            const successMsg = document.getElementById('successMessage');
-            successMsg.classList.add('show');
+        function closeModal() {
+            document.getElementById('thankYouModal').classList.remove('active');
+        }
 
-            // Reset form
-            document.getElementById('appointmentForm').reset();
+        ['appointmentForm', 'contactForm', 'freeForm'].forEach(id => {
+            document.getElementById(id).addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerText;
+                submitBtn.innerText = "Sending...";
+                submitBtn.disabled = true;
 
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMsg.classList.remove('show');
-            }, 5000);
-
-            // Log to console (you would send this to your backend in production)
-            console.log('Appointment Request:', formData);
+                // If EmailJS is configured, send the actual email
+                if(EMAIL_CONFIG.publicKey !== "YOUR_PUBLIC_KEY") {
+                    emailjs.sendForm(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, this)
+                        .then(() => {
+                            showThankYou();
+                            this.reset();
+                        })
+                        .catch((error) => {
+                            console.error('Email failed:', error);
+                            alert('Submission failed. Please try calling us directly.');
+                        })
+                        .finally(() => {
+                            submitBtn.innerText = originalText;
+                            submitBtn.disabled = false;
+                        });
+                } else {
+                    // Fallback for demonstration
+                    setTimeout(() => {
+                        showThankYou();
+                        this.reset();
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                    }, 1000);
+                }
+            });
         });
     </script>
 </body>

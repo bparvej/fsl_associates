@@ -22,27 +22,18 @@ const fallbackHeaderHTML = `
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="associates.html">Associates</a></li>
+                <li><a href="appointment.html">Appointment</a></li>
                 <li>
-                    <a href="#">Consultancy <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
-                    <div class="dropdown-menu" style="min-width: 240px;">
-                        <span class="dropdown-header">Paid Consultation</span>
-                        <a href="appointment.html">Online Consultation</a>
-                        <a href="visit-consultation.html">Visit Consultation</a>
-                        <div style="border-top: 1px solid #eee; margin: 5px 0;"></div>
-                        <a href="ask-question.html">Free Consultation</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Practice <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <a href="practices.html">Practice <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="family-law.html">Family Law</a>
-                        <a href="criminal-law.html">Criminal Law</a>
                         <a href="civil-law.html">Civil Law</a>
+                        <a href="criminal-law.html">Criminal Law</a>
+                        <a href="family-law.html">Family Law</a>
                         <a href="business-law.html">Business Law</a>
                         <a href="miscellaneous.html">Misc.</a>
                     </div>
                 </li>
-                <li><a href="csr.html">CSR</a></li>
+                <li><a href="csr.html">Free Consultancy</a></li>
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
@@ -202,17 +193,23 @@ function initAppointmentTabs() {
     
     if (tabBtns.length === 0) return;
 
+    const activateTab = (targetId) => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.style.display = 'none');
+        
+        const activeBtn = Array.from(tabBtns).find(b => b.dataset.tab === targetId);
+        if (activeBtn) activeBtn.classList.add('active');
+        
+        const activeContent = document.getElementById(targetId);
+        if (activeContent) activeContent.style.display = 'block';
+    };
+
     tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const target = btn.dataset.tab;
-            
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.style.display = 'none');
-            
-            btn.classList.add('active');
-            document.getElementById(target).style.display = 'block';
-        });
+        btn.addEventListener('click', () => activateTab(btn.dataset.tab));
     });
+
+    // Initialize the first tab (Paid Appointment) by default
+    activateTab('appointment');
 }
 
 function setupActiveMenu() {
