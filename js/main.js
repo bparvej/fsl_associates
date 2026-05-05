@@ -1,8 +1,7 @@
 const fallbackHeaderHTML = `
 <div class="top-bar">
     <div class="container">
-        <a href="mailto:advocatemalamgir@gmail.com"><i class="fas fa-envelope"></i> advocatemalamgir@gmail.com</a>
-        <a href="tel:01912-345528"><i class="fas fa-phone"></i> 01912-345528</a>
+        <a href="tel:01921-303050"><i class="fas fa-phone"></i> 01921-303050</a>
         <a href="https://www.facebook.com/profile.php?id=61578124595569" target="_blank"><i class="fab fa-facebook"></i> Facebook Page</a>
     </div>
 </div>
@@ -22,7 +21,7 @@ const fallbackHeaderHTML = `
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="associates.html">Associates</a></li>
-                <li><a href="appointment.html">Appointment</a></li>
+                <li><a href="appointment.php">Appointment</a></li>
                 <li>
                     <a href="practices.html">Practice <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-menu">
@@ -53,8 +52,8 @@ const fallbackFooterHTML = `
                 <h3>Contact Us</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-location-dot"></i> Nazma Law House, 50/1 Johnson Road, Dhaka-1100 (Level-2). Room no: 25 (Beside Star kabab & Restaurant and Opposite of DC Office)</li>
-                    <li><i class="fas fa-envelope"></i> advocatemalamgir@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> 01912-345528</li>
+                    <li><i class="fas fa-envelope"></i> fairandsquarelawfirm@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> 01921-303050</li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -68,7 +67,7 @@ const fallbackFooterHTML = `
             </div>
         </div>
         <div style="text-align: center; margin-bottom: 40px;">
-            <a href="appointment.html" class="btn btn-appointment">Book an Appointment</a>
+            <a href="appointment.php" class="btn btn-appointment">Book an Appointment</a>
         </div>
         <div class="copyright">
             <p>&copy; 2026 Fair & Square Legal Associates All Rights Reserved</p>
@@ -224,13 +223,13 @@ function setupActiveMenu() {
 
 function setupFloatingButton() {
     // Don't show floating button on appointment page
-    if (window.location.pathname.includes('appointment.html')) {
+    if (window.location.pathname.includes('appointment.php')) {
         return;
     }
     
     // Create floating button for mobile
     const floatingBtn = document.createElement('a');
-    floatingBtn.href = 'appointment.html';
+    floatingBtn.href = 'appointment.php';
     floatingBtn.className = 'floating-appointment-btn';
     floatingBtn.innerHTML = 'Appointment';
     floatingBtn.title = 'Book an Appointment';

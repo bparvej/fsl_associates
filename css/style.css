@@ -345,10 +345,11 @@ section {
     text-align: center;
 }
 .advocate-thumb {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: top;
     margin-bottom: 15px;
     border: 2px solid var(--accent);
 }
