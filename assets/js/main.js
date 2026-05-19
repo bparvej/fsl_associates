@@ -9,9 +9,9 @@ const fallbackHeaderHTML = `
 <header>
     <div class="nav-container">
         <div class="logo-area">
-            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-                <img src="assets/logo.jpg" alt="Logo" style="height: 50px;">
-                <div class="site-title" style="color: #333;">Fair & Square Legal Associates</div>
+            <a href="index.html" class="logo-link">
+                <img src="assets/images/logo.jpg" alt="Logo">
+                <div class="site-title">Fair & Square Legal Associates</div>
             </a>
         </div>
         <div class="menu-toggle">
@@ -23,7 +23,7 @@ const fallbackHeaderHTML = `
                 <li><a href="associates.html">Associates</a></li>
                 <li><a href="appointment.php">Appointment</a></li>
                 <li>
-                    <a href="practices.html">Practice <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <a href="practices.html">Practice <i class="fas fa-chevron-down chevron-icon"></i></a>
                     <div class="dropdown-menu">
                         <a href="civil-law.html">Civil Law</a>
                         <a href="criminal-law.html">Criminal Law</a>
@@ -66,7 +66,7 @@ const fallbackFooterHTML = `
                 </div>
             </div>
         </div>
-        <div style="text-align: center; margin-bottom: 40px;">
+        <div class="footer-cta">
             <a href="appointment.php" class="btn btn-appointment">Book an Appointment</a>
         </div>
         <div class="copyright">

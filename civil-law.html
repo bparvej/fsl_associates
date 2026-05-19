@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Civil Law - Fair & Square Legal Associates</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/pages.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+    <section class="hero hero--short">
         <h1 class="hero-title">Civil Law</h1>
     </section>
 
@@ -20,93 +22,93 @@
             <h2 class="serif">Civil Litigation & Dispute Resolution</h2>
             <p>Handle property disputes, contract issues, and civil litigation with experience and legal expertise.</p>
             
-            <h3 style="margin-top: 40px; color: var(--accent); font-size: 28px; margin-bottom: 40px;">Our Practice Areas</h3>
+            <h3 class="practice-section-title">Our Practice Areas</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-file-contract" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Contract Law</h4>
+            <div class="practice-area-grid">
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-file-contract practice-card__icon"></i>
+                        <h4 class="practice-card__title">Contract Law</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Issues related to the formation, enforcement, and breach of contracts.</p>
+                    <p class="practice-card__text">Issues related to the formation, enforcement, and breach of contracts.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-weight-scale" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Tort Law</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-weight-scale practice-card__icon"></i>
+                        <h4 class="practice-card__title">Tort Law</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Cases involving personal injury, negligence, defamation, and liability.</p>
+                    <p class="practice-card__text">Cases involving personal injury, negligence, defamation, and liability.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-house" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Property Law</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-house practice-card__icon"></i>
+                        <h4 class="practice-card__title">Property Law</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Disputes regarding ownership, transfer, and lease of property, including land and real estate issues.</p>
+                    <p class="practice-card__text">Disputes regarding ownership, transfer, and lease of property, including land and real estate issues.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-ring" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Family Law</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-ring practice-card__icon"></i>
+                        <h4 class="practice-card__title">Family Law</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Matters related to marriage, divorce, child custody, and inheritance.</p>
+                    <p class="practice-card__text">Matters related to marriage, divorce, child custody, and inheritance.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-book" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Inheritance and Succession</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-book practice-card__icon"></i>
+                        <h4 class="practice-card__title">Inheritance and Succession</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Issues related to the distribution of property and assets upon death, including intestate succession and wills.</p>
+                    <p class="practice-card__text">Issues related to the distribution of property and assets upon death, including intestate succession and wills.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-store" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Commercial Law</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-store practice-card__icon"></i>
+                        <h4 class="practice-card__title">Commercial Law</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">This includes corporate law, partnerships, and trade regulations, addressing business transactions and disputes.</p>
+                    <p class="practice-card__text">This includes corporate law, partnerships, and trade regulations, addressing business transactions and disputes.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-lightbulb" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Intellectual Property</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-lightbulb practice-card__icon"></i>
+                        <h4 class="practice-card__title">Intellectual Property</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Protection of trademarks, copyrights, patents, and related disputes.</p>
+                    <p class="practice-card__text">Protection of trademarks, copyrights, patents, and related disputes.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-people-group" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Labor and Employment Law</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-people-group practice-card__icon"></i>
+                        <h4 class="practice-card__title">Labor and Employment Law</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Issues involving employment contracts, labor rights, and disputes between employers and employees.</p>
+                    <p class="practice-card__text">Issues involving employment contracts, labor rights, and disputes between employers and employees.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-user-check" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Consumer Protection</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-user-check practice-card__icon"></i>
+                        <h4 class="practice-card__title">Consumer Protection</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Addressing grievances related to consumer rights and unfair trade practices.</p>
+                    <p class="practice-card__text">Addressing grievances related to consumer rights and unfair trade practices.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(197, 160, 89, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-handshake" style="font-size: 28px; color: var(--accent);"></i>
-                        <h4 style="color: var(--accent); margin: 0; font-size: 18px;">Dispute Resolution</h4>
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <i class="fas fa-handshake practice-card__icon"></i>
+                        <h4 class="practice-card__title">Dispute Resolution</h4>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin: 0;">Including mediation, arbitration, and litigation in civil courts.</p>
+                    <p class="practice-card__text">Including mediation, arbitration, and litigation in civil courts.</p>
                 </div>
             </div>
 
-            <h3 style="margin-top: 40px; color: var(--accent);">Why Choose Us</h3>
+            <h3 class="practice-why-title">Why Choose Us</h3>
             <p>Our civil law team offers:</p>
-            <ul style="margin-left: 20px; line-height: 2;">
+            <ul class="practice-list">
                 <li>Comprehensive understanding of civil procedure and evidence</li>
                 <li>Strong negotiation and settlement capabilities</li>
                 <li>Experience in complex property and commercial disputes</li>
@@ -118,6 +120,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/main.js"></script>
+    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/pages.min.js" defer></script>
 </body>
 </html>

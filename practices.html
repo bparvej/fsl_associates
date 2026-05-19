@@ -4,58 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice - Fair & Square Legal Associates</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/pages.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .practice-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .practice-snapshot {
-            background: #222;
-            border-radius: 12px;
-            border: 1px solid #333;
-            transition: var(--transition);
-            overflow: hidden;
-            position: relative;
-        }
-        .practice-snapshot:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
-        }
-        .snapshot-content {
-            padding: 40px 30px;
-        }
-        .snapshot-content i {
-            font-size: 36px;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        .learn-more {
-            color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
-    </style>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+    <section class="hero hero--short">
         <h1 class="hero-title">Practices</h1>
     </section>
 
     <section>
         <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 class="serif" style="font-size: 42px;">Our Expertise</h2>
-                <p style="color: var(--text-muted); max-width: 700px; margin: 20px auto;">Comprehensive legal solutions across diverse practice areas in Bangladesh and beyond.</p>
+            <div class="section-heading">
+                <h2 class="serif">Our Expertise</h2>
+                <p>Comprehensive legal solutions across diverse practice areas in Bangladesh and beyond.</p>
             </div>
 
             <div class="practice-grid">
@@ -114,6 +80,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/main.js"></script>
+    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/pages.min.js" defer></script>
 </body>
 </html>

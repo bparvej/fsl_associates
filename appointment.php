@@ -37,9 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Appointment - Fair & Square Legal Associates</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/pages.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <style>
         /* Visit Appointment Layout Styles */
         .visit-container {
@@ -253,7 +255,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div id="header-placeholder"></div>
 
-    <section class="hero" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero-bg.png');">
+    <section class="hero hero--short">
         <h1 class="hero-title">Book an Appointment</h1>
     </section>
 
@@ -269,32 +271,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div id="appointment" class="tab-content" style="display: block;">
                 <div class="visit-container">
                     <div class="visit-info">
-                        <h1 class="serif" style="color: var(--accent); margin-bottom: 15px;">Online Consultation</h1>
-                        <p class="subtitle" style="margin-bottom: 20px;">Secure your legal future with absolute peace of mind. Our team will contact you within 24 hours.</p>
+                        <h1 class="serif text-accent mb-20">Online Consultation</h1>
+                        <p class="subtitle mb-20">Secure your legal future with absolute peace of mind. Our team will contact you within 24 hours.</p>
                         
                         <div class="payment-info">
-                            <h2 style="color: var(--accent); font-size: 28px; margin-bottom: 15px;">৳500.00</h2>
-                            <p style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="color: var(--accent); margin-right: 10px;"></i> For 30 Minutes, ৳500.00 BDT. will be charged.</p>
-                            <p style="margin-bottom: 10px;"><i class="fas fa-arrow-right" style="color: var(--accent); margin-right: 10px;"></i> For Additional 60 Minutes, ৳800.00 BDT. will be charged.</p>
-                            <p style="margin-bottom: 20px; font-weight: 600; color: #fff;"><i class="fas fa-info-circle" style="color: var(--accent); margin-right: 10px;"></i> You have to pay before meeting.</p>
+                            <h2 class="payment-price">৳500.00</h2>
+                            <p class="payment-detail"><i class="fas fa-arrow-right"></i> For 30 Minutes, ৳500.00 BDT. will be charged.</p>
+                            <p class="payment-detail"><i class="fas fa-arrow-right"></i> For Additional 60 Minutes, ৳800.00 BDT. will be charged.</p>
+                            <p class="payment-note"><i class="fas fa-info-circle"></i> You have to pay before meeting.</p>
                             
-                            <div style="background: #1f2937; padding: 18px; border-radius: 8px; color: #fff;">
-
-    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
-        <i class="fas fa-mobile-alt" style="font-size: 24px;"></i>
-        <div>
-            <p style="font-weight: 700; margin: 0;">Mobile Financial Services (Personal)</p>
-            <p style="font-size: 22px; font-weight: 700; margin: 2px 0;">01912345528</p>
-        </div>
-    </div>
-
-    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <span style="background:#e2136e;padding:4px 10px;border-radius:20px;font-size:12px;">bKash</span>
-        <span style="background:#f97316;padding:4px 10px;border-radius:20px;font-size:12px;">Nagad</span>
-        <span style="background:#7c3aed;padding:4px 10px;border-radius:20px;font-size:12px;">Rocket</span>
-    </div>
-
-</div>
+                            <div class="payment-methods">
+                                <div class="payment-methods__header">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <p class="label">Mobile Financial Services (Personal)</p>
+                                        <p class="number">01912345528</p>
+                                    </div>
+                                </div>
+                                <div class="payment-badges">
+                                    <span class="payment-badge payment-badge--bkash">bKash</span>
+                                    <span class="payment-badge payment-badge--nagad">Nagad</span>
+                                    <span class="payment-badge payment-badge--rocket">Rocket</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -329,7 +328,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
-                            <button type="submit" class="submit-btn" style="background: #111; color: #fff; width: 100%; padding: 15px; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; text-transform: uppercase;">Request Appointment</button>
+                            <button type="submit" class="submit-btn-dark">Request Appointment</button>
                         </form>
                     </div>
                 </div>
@@ -339,27 +338,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div id="contact" class="tab-content">
                 <div class="visit-container">
                     <div class="visit-info">
-                        <h1 class="serif" style="color: var(--accent); margin-bottom: 15px;">Chamber Appointment</h1>
-                        <p class="subtitle" style="margin-bottom: 20px;">Book a face-to-face consultation at our Dhaka chamber.</p>
+                        <h1 class="serif text-accent mb-20">Chamber Appointment</h1>
+                        <p class="subtitle mb-20">Book a face-to-face consultation at our Dhaka chamber.</p>
                         
                         <div class="info-item">
                             <i class="fas fa-location-dot"></i>
                             <div>
-                                <h4 style="color: #fff;">Chamber Address</h4>
+                                <h4>Chamber Address</h4>
                                 <p>Nazma Law House, 50/1 Johnson Road, Dhaka-1100 (Level-2). Room no: 25 (Beside Star kabab & Restaurant and Opposite of DC Office)</p>
                             </div>
                         </div>
 
                         <div class="payment-info">
-                            <h2 style="color: var(--accent); font-size: 28px; margin-bottom: 15px;">৳1,000.00</h2>
-                            <p style="margin-bottom: 10px;"><i class="fas fa-circle-info" style="color: var(--accent); margin-right: 10px;"></i> Minimum ৳1,000.00 will be charged for the first visit/meeting.</p>
-                            <p style="margin-bottom: 20px; font-weight: 600; color: #fff;"><i class="fas fa-info-circle" style="color: var(--accent); margin-right: 10px;"></i> Fee confirmation required before meeting.</p>
-                            
+                            <h2 class="payment-price">৳1,000.00</h2>
+                            <p class="payment-detail"><i class="fas fa-circle-info"></i> Minimum ৳1,000.00 will be charged for the first visit/meeting.</p>
+                            <p class="payment-note"><i class="fas fa-info-circle"></i> Fee confirmation required before meeting.</p>
                         </div>
                     </div>
 
                     <div class="visit-form-box">
-                        <h2 class="serif" style="margin-bottom: 25px; text-align: center;">Book a Visit</h2>
+                        <h2 class="serif mb-30 text-center">Book a Visit</h2>
                         <form method="POST" action="appointment.php">
                             <input type="hidden" name="form_type" value="Chamber Visit">
                             <div class="form-group">
@@ -378,7 +376,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label>Legal Matter</label>
                                 <textarea name="message" placeholder="Describe your matter briefly..."></textarea>
                             </div>
-                            <button type="submit" class="submit-btn" style="background: #111; color: #fff; width: 100%; padding: 15px; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; text-transform: uppercase;">Request Chamber Visit</button>
+                            <button type="submit" class="submit-btn-dark">Request Chamber Visit</button>
                         </form>
                     </div>
                 </div>
@@ -390,8 +388,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="hidden" name="form_type" value="Free Legal Aid">
                     <h1 class="serif" style="color: #2ecc71;">Free Legal Aid</h1>
                     <p class="subtitle">Looking for initial guidance? Describe your matter for a brief expert opinion.</p>
-                    <div style="background: rgba(46, 204, 113, 0.1); padding: 15px; border-radius: 6px; border-left: 4px solid #2ecc71; margin-bottom: 25px; font-size: 14px;">
-                        <p style="color: #fff; margin: 0;"><i class="fas fa-info-circle" style="color: #2ecc71; margin-right: 10px;"></i> The lawyers will answer your query within a short period of time and your query will appear in a <b>Free Consultancy page</b>. <a style="color: #2ecc71;" href="/csr.html"> Click Here </a></p>
+                    <div class="free-consult-info">
+                        <p><i class="fas fa-info-circle"></i> The lawyers will answer your query within a short period of time and your query will appear in a <b>Free Consultancy page</b>. <a href="/csr.html"> Click Here </a></p>
                     </div>
                     
                     <div class="form-group">
@@ -407,7 +405,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <textarea name="message" required placeholder="Briefly state your legal issue..."></textarea>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn-submit" style="background: #2ecc71; color: #fff;">Submit for Free Review</button>
+                        <button type="submit" class="btn-submit btn-submit--green">Submit for Free Review</button>
                     </div>
                 </form>
             </div>
@@ -420,21 +418,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <i class="fas fa-check-circle"></i>
             <h2 class="serif">Submission Successful</h2>
             <p>Thank you for choosing Fair & Square Legal Associates. Your request has been received, and our dedicated team is already reviewing your details. We will reach out to you within 24 hours.</p>
-            <button class="btn btn-appointment" style="margin-top: 30px; width: 100%;" onclick="closeModal()">Close</button>
+            <button class="btn btn-appointment mt-30" style="width: 100%;" onclick="closeModal()">Close</button>
         </div>
     </div>
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/main.js"></script>
-    <script>
-        function closeModal() {
-            document.getElementById('thankYouModal').classList.remove('active');
-            // Optionally redirect to home or clear the URL to avoid resubmitting on refresh
-            if (window.history.replaceState) {
-                window.history.replaceState(null, null, window.location.href);
-            }
-        }
-    </script>
+    <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/pages.min.js" defer></script>
 </body>
 </html>
